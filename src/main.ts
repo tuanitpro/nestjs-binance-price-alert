@@ -1,4 +1,5 @@
 import { NestFactory } from "@nestjs/core";
+import * as Sentry from '@sentry/node'
 import { AppModule } from "./app.module";
 import { AppService } from "./app.service";
 
@@ -9,6 +10,9 @@ async function bootstrap() {
         ? ["warn", "error"]
         : ["debug", "log", "verbose"],
   });
+  Sentry.init({
+    dsn: process.env.SENTRY_DNS,
+})
   const appService = appContext.get(AppService);
   console.log(appService.getHello());
 }
