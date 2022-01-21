@@ -20,7 +20,7 @@ jobs:
 
     - name: Build
       run: |
-        echo "The selected color is ${{ env.working-directory}} "
+        echo "The selected color is ${{ env.working-directory}} {{$env:GITHUB_PATH}}"
    
         npm install
         npm run build
