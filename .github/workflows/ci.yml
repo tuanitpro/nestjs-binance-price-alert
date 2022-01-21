@@ -28,3 +28,4 @@ jobs:
         port: ${{ secrets.PORT }}
         source: "README.md"
         target: "/home/www"
+        tar_tmp_path: "/home/www"
