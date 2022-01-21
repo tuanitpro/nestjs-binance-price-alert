@@ -20,7 +20,8 @@ jobs:
 
     - name: Build
       run: |
-        echo ${{env.working-directory}}
+        echo "The selected color is ${{ env.working-directory}} "
+   
         npm install
         npm run build
   deploy:
