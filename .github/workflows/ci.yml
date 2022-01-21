@@ -20,7 +20,7 @@ jobs:
 
     - name: Build
       run: |
-        echo $base_directory
+        echo ${{env.base_directory}}
    
         npm install
         npm run build
