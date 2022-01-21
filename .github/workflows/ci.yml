@@ -24,6 +24,7 @@ jobs:
    
         npm install
         npm run build
+        tar -cvf dist.tar dist/*
   deploy:
     runs-on: ubuntu-latest
     steps:
