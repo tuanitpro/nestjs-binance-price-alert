@@ -34,4 +34,9 @@ jobs:
         port: ${{ secrets.PORT }}
         source: "dist/*"
         target: "/www/wwwroot/binance_bot.tuanitpro.com"
- 
+        
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.3.1
+      with:
+       
+        retention-days: 1
