@@ -25,7 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Push to server
+   
       run: |
+        npm install
         npm run build
         tar -cvf dist.tar dist/*
        
