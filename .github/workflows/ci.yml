@@ -21,16 +21,9 @@ jobs:
     - name: Build
       run: |
         npm install
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Push to server
-   
-      run: |
-        npm install
         npm run build
         tar -cvf dist.tar dist/*
-       
+        
     - uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.HOST }}
@@ -40,3 +33,4 @@ jobs:
         source: "dist.tar"
         target: "/home/www"
         tar_tmp_path: "/home/www"
+ 
