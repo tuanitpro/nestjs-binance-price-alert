@@ -20,7 +20,7 @@ jobs:
 
     - name: Build
       run: |
-        echo ${{env.base_directory}}
+        echo ${{env.GITHUB_WORKSPACE}}
    
         npm install
         npm run build
