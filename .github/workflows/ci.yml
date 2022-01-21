@@ -18,14 +18,17 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello  ${{ secrets.HOST }}"
+    - name: Run a multi-line script
+      run: |
+        mkdir ../build
+        cp -TR . ../build
+        tar -cvf deploy.tar ../build/
     - uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        source: "README.md"
+        source: "deploy.tar"
         target: "/home/www"
         tar_tmp_path: "/home/www"
