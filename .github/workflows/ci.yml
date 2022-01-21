@@ -26,9 +26,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Push to server
-      working-directory: src
+      working-directory: ./src
       run: |
-        ls -la
+        ls
         tar -cvf dist.tar ./dist/
     - uses: appleboy/scp-action@master
       with:
