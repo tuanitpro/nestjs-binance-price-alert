@@ -31,5 +31,5 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         source: "dist/*"
-        target: "/home/www"
+        target: "/www/wwwroot/binance_bot.tuanitpro.com"
  
