@@ -20,17 +20,14 @@ jobs:
 
     - name: Build
       run: |
-        echo ${{env.GITHUB_WORKSPACE}}
-   
         npm install
-        npm run build
-        tar -cvf dist.tar dist/*
   deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Push to server
       run: |
-        ls
+        npm run build
+        tar -cvf dist.tar dist/*
        
     - uses: appleboy/scp-action@master
       with:
