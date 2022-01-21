@@ -26,6 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Push to server
+      working-directory: src
       run: |
         ls -la
         tar -cvf dist.tar ./dist/
