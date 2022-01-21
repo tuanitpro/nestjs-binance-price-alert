@@ -27,13 +27,13 @@ jobs:
     steps:
     - name: Push to server
       run:
-        tar -cvf deploy.tar ../dist/
+        tar -cvf dist.tar ./dist/
     - uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        source: "deploy.tar"
+        source: "dist.tar"
         target: "/home/www"
         tar_tmp_path: "/home/www"
