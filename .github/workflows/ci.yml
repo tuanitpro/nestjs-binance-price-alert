@@ -35,6 +35,10 @@ jobs:
         source: "dist/*"
         target: "/www/wwwroot/binance_bot.tuanitpro.com"
         
+    - name: Create artifact
+      run: | 
+         mkdir -p ~/artifacts
+           
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
       with:
